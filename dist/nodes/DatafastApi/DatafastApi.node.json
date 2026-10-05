@@ -1,0 +1,4 @@
+{
+  "node": "@nativeship/n8n-nodes-datafast.datafastApi",
+  "nodeVersion": "1"
+}
