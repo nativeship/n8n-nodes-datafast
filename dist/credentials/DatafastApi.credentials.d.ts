@@ -1,5 +1,5 @@
 import { type IAuthenticateGeneric, type Icon, type ICredentialTestRequest, type ICredentialType, type INodeProperties } from "n8n-workflow";
-export declare class DatafastApiApi implements ICredentialType {
+export declare class DatafastApi implements ICredentialType {
     name: string;
     displayName: string;
     documentationUrl: string;

@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DatafastApiApi = void 0;
-class DatafastApiApi {
+exports.DatafastApi = void 0;
+class DatafastApi {
     constructor() {
-        this.name = "datafastApiApi";
+        this.name = "datafastApi";
         this.displayName = "DataFast API";
         this.documentationUrl = "https://datafa.st/docs/api";
         this.icon = {
-            light: "file:../nodes/DatafastApi/datafastApi.svg",
-            dark: "file:../nodes/DatafastApi/datafastApi.dark.svg"
+            light: "file:../nodes/Datafast/datafast.svg",
+            dark: "file:../nodes/Datafast/datafast.dark.svg"
         };
         this.properties = [
             {
@@ -38,5 +38,5 @@ class DatafastApiApi {
         };
     }
 }
-exports.DatafastApiApi = DatafastApiApi;
-//# sourceMappingURL=DatafastApiApi.credentials.js.map
+exports.DatafastApi = DatafastApi;
+//# sourceMappingURL=DatafastApi.credentials.js.map

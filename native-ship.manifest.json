@@ -2,15 +2,15 @@
   "schemaVersion": 2,
   "style": "programmatic",
   "names": {
-    "typeName": "DatafastApi",
-    "nodeName": "datafastApi",
-    "descriptionName": "datafastApi",
+    "typeName": "Datafast",
+    "nodeName": "datafast",
+    "descriptionName": "datafast",
     "hasTriggers": false,
     "nodeFiles": [
-      "dist/nodes/DatafastApi/DatafastApi.node.js"
+      "dist/nodes/Datafast/Datafast.node.js"
     ],
     "credentialFiles": [
-      "dist/credentials/DatafastApiApi.credentials.js"
+      "dist/credentials/DatafastApi.credentials.js"
     ]
   },
   "target": {
@@ -16345,7 +16345,7 @@
   ],
   "presentationProfile": {
     "version": 1,
-    "title": "DataFast API",
+    "title": "DataFast",
     "description": "DataFast helps businesses track website visits, conversions, and revenue.",
     "documentationUrl": "https://datafa.st/docs/api",
     "artwork": {

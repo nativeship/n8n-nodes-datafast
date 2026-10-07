@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DatafastApi = void 0;
+exports.Datafast = void 0;
 const n8n_workflow_1 = require("n8n-workflow");
 const http_1 = require("../../shared/http");
 function normalizeParameterValue(value) {
@@ -148,14 +148,14 @@ function valueAtPath(value, path) {
         return current[segment];
     }, value);
 }
-class DatafastApi {
+class Datafast {
     constructor() {
         this.description = {
-            displayName: "DataFast API",
-            name: "datafastApi",
+            displayName: "DataFast",
+            name: "datafast",
             icon: {
-                light: "file:datafastApi.svg",
-                dark: "file:datafastApi.dark.svg"
+                light: "file:datafast.svg",
+                dark: "file:datafast.dark.svg"
             },
             group: [],
             version: [
@@ -263,7 +263,7 @@ class DatafastApi {
                 }
             ],
             defaults: {
-                name: "DataFast API"
+                name: "DataFast"
             },
             usableAsTool: true,
             inputs: [
@@ -274,7 +274,7 @@ class DatafastApi {
             ],
             credentials: [
                 {
-                    name: "datafastApiApi",
+                    name: "datafastApi",
                     required: true
                 }
             ],
@@ -5293,7 +5293,7 @@ class DatafastApi {
                         const body = {};
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5308,7 +5308,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "name", "displayName": "Name", "type": "string", "required": true }, this.getNodeParameter("name", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5332,7 +5332,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "trigger", "displayName": "Trigger", "type": "object", "representation": "raw", "additionalValue": { "name": "value", "displayName": "Value", "type": "any" } }, additionalFields["trigger"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5347,7 +5347,7 @@ class DatafastApi {
                         path = path.split("{alertId}").join(encodeURIComponent(String(this.getNodeParameter("alertId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5366,7 +5366,7 @@ class DatafastApi {
                             qs["limit"] = additionalFields["limit"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5380,7 +5380,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5405,7 +5405,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "trigger", "displayName": "Trigger", "type": "object", "representation": "raw", "additionalValue": { "name": "value", "displayName": "Value", "type": "any" } }, additionalFields["trigger"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5423,7 +5423,7 @@ class DatafastApi {
                             qs["fields"] = additionalFields["fields"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5487,7 +5487,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5551,7 +5551,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5567,7 +5567,7 @@ class DatafastApi {
                             qs["websiteId"] = additionalFields["websiteId"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5583,7 +5583,7 @@ class DatafastApi {
                             qs["websiteId"] = additionalFields["websiteId"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5604,7 +5604,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "websiteIds", "displayName": "Website Ids", "description": "An empty array means all websites available to the caller.", "type": "array", "representation": "raw", "items": { "name": "item", "displayName": "Item", "type": "string" } }, additionalFields["websiteIds"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5620,7 +5620,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "name", "displayName": "Name", "type": "string", "required": true }, this.getNodeParameter("name", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5634,7 +5634,7 @@ class DatafastApi {
                         path = path.split("{tokenId}").join(encodeURIComponent(String(this.getNodeParameter("tokenId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5649,7 +5649,7 @@ class DatafastApi {
                         path = path.split("{apiKeyId}").join(encodeURIComponent(String(this.getNodeParameter("apiKeyId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5662,7 +5662,7 @@ class DatafastApi {
                         const body = {};
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5676,7 +5676,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5691,7 +5691,7 @@ class DatafastApi {
                         path = path.split("{apiKeyId}").join(encodeURIComponent(String(this.getNodeParameter("apiKeyId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5705,7 +5705,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5719,7 +5719,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5757,7 +5757,7 @@ class DatafastApi {
                             qs["offset"] = additionalFields["offset"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5771,7 +5771,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5803,7 +5803,7 @@ class DatafastApi {
                             qs["crawlerId"] = additionalFields["crawlerId"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5817,7 +5817,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5830,7 +5830,7 @@ class DatafastApi {
                         const body = {};
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5844,7 +5844,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5882,7 +5882,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "verifiedOnly", "displayName": "Verified Only", "type": "boolean" }, additionalFields["verifiedOnly"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PATCH", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -5950,7 +5950,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6018,7 +6018,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6086,7 +6086,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6154,7 +6154,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6222,7 +6222,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6290,7 +6290,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6358,7 +6358,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6426,7 +6426,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6494,7 +6494,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6562,7 +6562,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6630,7 +6630,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6647,7 +6647,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "steps", "displayName": "Steps", "type": "array", "required": true, "representation": "raw", "items": { "name": "item", "displayName": "Item", "type": "alternative", "composition": "oneOf", "representation": "raw", "alternatives": [{ "name": "alternative1", "displayName": "Alternative1", "type": "object", "representation": "raw", "fields": [{ "name": "name", "displayName": "Name", "type": "string", "required": true }, { "name": "type", "displayName": "Type", "type": "string", "required": true }, { "name": "url", "displayName": "Url", "type": "string", "required": true }], "additionalValue": { "name": "value", "displayName": "Value", "type": "any" } }, { "name": "alternative2", "displayName": "Alternative2", "type": "object", "representation": "raw", "fields": [{ "name": "goalName", "displayName": "Goal Name", "type": "string", "required": true }, { "name": "name", "displayName": "Name", "type": "string", "required": true }, { "name": "type", "displayName": "Type", "type": "string", "required": true }], "additionalValue": { "name": "value", "displayName": "Value", "type": "any" } }] } }, this.getNodeParameter("steps", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6662,7 +6662,7 @@ class DatafastApi {
                         path = path.split("{funnelId}").join(encodeURIComponent(String(this.getNodeParameter("funnelId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6727,7 +6727,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6741,7 +6741,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6762,7 +6762,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "steps", "displayName": "Steps", "type": "array", "representation": "raw", "items": { "name": "item", "displayName": "Item", "type": "alternative", "composition": "oneOf", "representation": "raw", "alternatives": [{ "name": "alternative1", "displayName": "Alternative1", "type": "object", "representation": "raw", "fields": [{ "name": "name", "displayName": "Name", "type": "string", "required": true }, { "name": "type", "displayName": "Type", "type": "string", "required": true }, { "name": "url", "displayName": "Url", "type": "string", "required": true }], "additionalValue": { "name": "value", "displayName": "Value", "type": "any" } }, { "name": "alternative2", "displayName": "Alternative2", "type": "object", "representation": "raw", "fields": [{ "name": "goalName", "displayName": "Goal Name", "type": "string", "required": true }, { "name": "name", "displayName": "Name", "type": "string", "required": true }, { "name": "type", "displayName": "Type", "type": "string", "required": true }], "additionalValue": { "name": "value", "displayName": "Value", "type": "any" } }] } }, additionalFields["steps"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6826,7 +6826,7 @@ class DatafastApi {
                             qs["filter_utm_content"] = additionalFields["filter_utm_content"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6849,7 +6849,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "name", "displayName": "Name", "description": "Names are normalized to lowercase; identify is reserved.", "type": "string", "required": true }, this.getNodeParameter("name", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6864,7 +6864,7 @@ class DatafastApi {
                         qs["goalName"] = this.getNodeParameter("goalName", itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6888,7 +6888,7 @@ class DatafastApi {
                             qs["end"] = additionalFields["end"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6917,7 +6917,7 @@ class DatafastApi {
                             qs["offset"] = additionalFields["offset"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6931,7 +6931,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6945,7 +6945,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6969,7 +6969,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "name", "displayName": "Name", "type": "string" }, additionalFields["name"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PATCH", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -6988,7 +6988,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "user_id", "displayName": "User id", "type": "string", "required": true }, this.getNodeParameter("user_id", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7005,7 +7005,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "lemonsqueezyStoreId", "displayName": "Lemonsqueezy Store Id", "type": "string", "required": true }, this.getNodeParameter("lemonsqueezyStoreId", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7021,7 +7021,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "paddleApiKey", "displayName": "Paddle Api Key", "type": "string", "required": true }, this.getNodeParameter("paddleApiKey", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7038,7 +7038,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "polarOrgId", "displayName": "Polar Org Id", "type": "string", "required": true }, this.getNodeParameter("polarOrgId", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7054,7 +7054,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "stripeRak", "displayName": "Stripe Rak", "type": "string", "required": true }, this.getNodeParameter("stripeRak", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7068,7 +7068,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7082,7 +7082,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7096,7 +7096,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7110,7 +7110,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7124,7 +7124,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7138,7 +7138,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7152,7 +7152,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7166,7 +7166,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PATCH", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7186,7 +7186,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "timestamp", "displayName": "Timestamp", "description": "ISO 8601 timestamp or YYYY-MM-DD in website timezone.", "type": "string", "required": true }, this.getNodeParameter("timestamp", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7201,7 +7201,7 @@ class DatafastApi {
                         path = path.split("{noteId}").join(encodeURIComponent(String(this.getNodeParameter("noteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7230,7 +7230,7 @@ class DatafastApi {
                             qs["order"] = additionalFields["order"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7251,7 +7251,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "timestamp", "displayName": "Timestamp", "description": "ISO 8601 timestamp or YYYY-MM-DD in website timezone.", "type": "string" }, additionalFields["timestamp"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7291,7 +7291,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "transaction_id", "displayName": "Transaction id", "type": "string", "required": true }, this.getNodeParameter("transaction_id", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["message", "transaction_id"], simplified: ["message", "transaction_id"] };
@@ -7319,7 +7319,7 @@ class DatafastApi {
                             qs["end"] = additionalFields["end"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7351,7 +7351,7 @@ class DatafastApi {
                             qs["platform"] = additionalFields["platform"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7368,7 +7368,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "role", "displayName": "Role", "type": "string", "required": true, "enum": ["viewer", "member"] }, this.getNodeParameter("role", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7382,7 +7382,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7398,7 +7398,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "userId", "displayName": "User Id", "type": "string", "required": true }, this.getNodeParameter("userId", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7415,7 +7415,7 @@ class DatafastApi {
                             qs["websiteId"] = additionalFields["websiteId"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7457,7 +7457,7 @@ class DatafastApi {
                             qs["isCustomer"] = additionalFields["isCustomer"];
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7476,7 +7476,7 @@ class DatafastApi {
                         setBodyField(body, { "name": "timezone", "displayName": "Timezone", "description": "IANA timezone.", "type": "string", "required": true }, this.getNodeParameter("timezone", itemIndex), this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7490,7 +7490,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "DELETE", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: [], simplified: [] };
@@ -7504,7 +7504,7 @@ class DatafastApi {
                         path = path.split("{websiteId}").join(encodeURIComponent(String(this.getNodeParameter("websiteId", itemIndex))));
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7517,7 +7517,7 @@ class DatafastApi {
                         const body = {};
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7561,7 +7561,7 @@ class DatafastApi {
                             setBodyField(body, { "name": "timezone", "displayName": "Timezone", "type": "string" }, additionalFields["timezone"], this, itemIndex);
                         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
                         options = { method: "PUT", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "datafastApiApi", "type": "bearer" }]);
+                        credentialApplications = ([{ "credentialType": "datafastApi", "type": "bearer" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data", "meta", "pagination", "status"], simplified: ["data", "meta", "pagination", "status"] };
@@ -7681,5 +7681,5 @@ class DatafastApi {
         return [output];
     }
 }
-exports.DatafastApi = DatafastApi;
-//# sourceMappingURL=DatafastApi.node.js.map
+exports.Datafast = Datafast;
+//# sourceMappingURL=Datafast.node.js.map

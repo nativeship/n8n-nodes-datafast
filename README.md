@@ -1,4 +1,4 @@
-# DataFast API n8n community node
+# DataFast n8n community node
 
 DataFast helps businesses track website visits, conversions, and revenue.
 
@@ -260,12 +260,12 @@ Configure the generated bearer token credential in n8n before using the node.
 ## Usage
 
 1. Install this community-node package in n8n.
-2. Add the **DataFast API** node to a workflow.
+2. Add the **DataFast** node to a workflow.
 3. Select a resource and operation, configure its parameters, and execute the workflow.
 
 ## Example workflow
 
-Connect **Manual Trigger** -> **DataFast API** -> a destination node, select an operation, then run the workflow and inspect the returned items.
+Connect **Manual Trigger** -> **DataFast** -> a destination node, select an operation, then run the workflow and inspect the returned items.
 
 ## Development
 
@@ -276,4 +276,4 @@ npm run lint
 npm run dev
 ```
 
-`npm run dev` starts a local n8n development instance. Find the integration by its **DataFast API** display name.
+`npm run dev` starts a local n8n development instance. Find the integration by its **DataFast** display name.

@@ -153,13 +153,13 @@ function valueAtPath(value: unknown, path: string): unknown {
   }, value);
 }
 
-export class DatafastApi implements INodeType {
+export class Datafast implements INodeType {
   description: INodeTypeDescription = {
-        displayName: "DataFast API",
-        name: "datafastApi",
+        displayName: "DataFast",
+        name: "datafast",
         icon: {
-            light: "file:datafastApi.svg",
-            dark: "file:datafastApi.dark.svg"
+            light: "file:datafast.svg",
+            dark: "file:datafast.dark.svg"
         },
         group: [],
         version: [
@@ -267,7 +267,7 @@ export class DatafastApi implements INodeType {
             }
         ],
         defaults: {
-            name: "DataFast API"
+            name: "DataFast"
         },
         usableAsTool: true,
         inputs: [
@@ -278,7 +278,7 @@ export class DatafastApi implements INodeType {
         ],
         credentials: [
             {
-                name: "datafastApiApi",
+                name: "datafastApi",
                 required: true
             }
         ],
@@ -5303,7 +5303,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5322,7 +5322,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5344,7 +5344,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5364,7 +5364,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5385,7 +5385,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5404,7 +5404,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5427,7 +5427,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5447,7 +5447,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5490,7 +5490,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5534,7 +5534,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5553,7 +5553,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5572,7 +5572,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5593,7 +5593,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5612,7 +5612,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5631,7 +5631,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5651,7 +5651,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5670,7 +5670,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5689,7 +5689,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5709,7 +5709,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5728,7 +5728,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5747,7 +5747,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5777,7 +5777,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5796,7 +5796,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5823,7 +5823,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5842,7 +5842,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5861,7 +5861,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5880,7 +5880,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5909,7 +5909,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PATCH" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5954,7 +5954,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -5999,7 +5999,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6044,7 +6044,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6089,7 +6089,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6134,7 +6134,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6179,7 +6179,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6224,7 +6224,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6269,7 +6269,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6314,7 +6314,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6359,7 +6359,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6404,7 +6404,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6424,7 +6424,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6444,7 +6444,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6488,7 +6488,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6507,7 +6507,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6528,7 +6528,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6571,7 +6571,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6593,7 +6593,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6613,7 +6613,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6636,7 +6636,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6662,7 +6662,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6681,7 +6681,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6700,7 +6700,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6722,7 +6722,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PATCH" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6742,7 +6742,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6762,7 +6762,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6781,7 +6781,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6801,7 +6801,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6820,7 +6820,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6839,7 +6839,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6858,7 +6858,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6877,7 +6877,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6896,7 +6896,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6915,7 +6915,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6934,7 +6934,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6953,7 +6953,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6972,7 +6972,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PATCH" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -6993,7 +6993,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7013,7 +7013,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7039,7 +7039,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7060,7 +7060,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7091,7 +7091,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["message","transaction_id"], simplified: ["message","transaction_id"] };
@@ -7116,7 +7116,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7143,7 +7143,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7163,7 +7163,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7182,7 +7182,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7201,7 +7201,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7221,7 +7221,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7253,7 +7253,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7274,7 +7274,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7293,7 +7293,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "DELETE" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: [], simplified: [] };
@@ -7312,7 +7312,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7331,7 +7331,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };
@@ -7363,7 +7363,7 @@ export class DatafastApi implements INodeType {
         
         const serverBaseUrl = { url: "https://datafa.st/api/v1", blockRedirects: false };
         options = { method: "PUT" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"datafastApiApi","type":"bearer"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"datafastApi","type":"bearer"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["data","meta","pagination","status"], simplified: ["data","meta","pagination","status"] };

@@ -33,11 +33,11 @@
     "license": "MIT",
     "n8n": {
         "credentials": [
-            "dist/credentials/DatafastApiApi.credentials.js"
+            "dist/credentials/DatafastApi.credentials.js"
         ],
         "n8nNodesApiVersion": 1,
         "nodes": [
-            "dist/nodes/DatafastApi/DatafastApi.node.js"
+            "dist/nodes/Datafast/Datafast.node.js"
         ],
         "strict": true
     },

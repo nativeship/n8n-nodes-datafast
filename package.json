@@ -34,17 +34,17 @@
   "license": "MIT",
   "n8n": {
     "credentials": [
-      "dist/credentials/DatafastApiApi.credentials.js"
+      "dist/credentials/DatafastApi.credentials.js"
     ],
     "n8nNodesApiVersion": 1,
     "nodes": [
-      "dist/nodes/DatafastApi/DatafastApi.node.js"
+      "dist/nodes/Datafast/Datafast.node.js"
     ],
     "strict": true
   },
   "name": "@nativeship/n8n-nodes-datafast",
   "nativeShip": {
-    "artifactSha256": "679fd4fb014266f8a94cb0fd90911320c2e12d7078f5ddd466d96695c0664661"
+    "artifactSha256": "f5a14b9658583a4cb99e5ce6945803254a3a1f0266fc6e721a303574f17bc465"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
@@ -62,5 +62,5 @@
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

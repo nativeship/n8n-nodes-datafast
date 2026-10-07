@@ -1,13 +1,13 @@
 import { type IAuthenticateGeneric, type Icon, type ICredentialTestRequest, type ICredentialType, type INodeProperties } from "n8n-workflow";
 
 // Generated with ts-morph
-export class DatafastApiApi implements ICredentialType {
-  name = "datafastApiApi";
+export class DatafastApi implements ICredentialType {
+  name = "datafastApi";
   displayName = "DataFast API";
   documentationUrl = "https://datafa.st/docs/api";
   icon: Icon = {
-        light: "file:../nodes/DatafastApi/datafastApi.svg",
-        dark: "file:../nodes/DatafastApi/datafastApi.dark.svg"
+        light: "file:../nodes/Datafast/datafast.svg",
+        dark: "file:../nodes/Datafast/datafast.dark.svg"
     };
   properties: INodeProperties[] = [
         {
